@@ -21,6 +21,7 @@ import java.util.List;
 import javax.imageio.ImageIO;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.file.Paths;
 
 /**
  *
@@ -226,8 +227,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // Escanea la carpeta de modelos locales y añade entradas al combo
     private void populateLocalModelCombos() {
         try {
-            // Ruta base de modelos: preferir absoluta proporcionada; fallback a ./models
-            String basePath = "C:\\Users\\Leyva\\Desktop\\JESUS_APP\\TFG_Alejandro\\models";
+            // Ruta base de modelos: calcular relativa al directorio de trabajo del proceso
+            String basePath = Paths.get(System.getProperty("user.dir"), "models").toString();
             File baseDir = new File(basePath);
             if (!baseDir.exists() || !baseDir.isDirectory()) {
                 baseDir = new File("models");
@@ -280,11 +281,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // Escanea carpeta dl_models para modelos DL y añade entradas al combo
     private void populateDlModels() {
         try {
-            // Ruta base por defecto: ./dl_models
+            // Ruta base por defecto: ./dl_models (fallback a la carpeta dl_models dentro del working dir)
             File baseDir = new File("dl_models");
             if (!baseDir.exists() || !baseDir.isDirectory()) {
-                // Fallback a ruta absoluta común
-                baseDir = new File("C:\\Users\\alex1\\Desktop\\APP_JESUS_CASI_FINIT\\JESUS_APP\\TFG_Alejandro\\dl_models");
+                baseDir = new File(Paths.get(System.getProperty("user.dir"), "dl_models").toString());
             }
             if (!baseDir.exists() || !baseDir.isDirectory()) {
                 System.out.println("[DL MODELS] Carpeta dl_models no encontrada: " + baseDir.getAbsolutePath());

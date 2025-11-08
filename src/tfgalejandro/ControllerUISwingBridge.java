@@ -7,6 +7,7 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Locale;
 
 /**
@@ -38,7 +39,8 @@ public class ControllerUISwingBridge {
     }
     
     // -------------------- Predicción desde imagen (bridge) --------------------
-    private static final String PY_SCRIPT_DIR = "C:\\Users\\alex1\\Desktop\\APP_JESUS_CASI_FINIT\\JESUS_APP\\TFG_Alejandro\\resources_local";
+    // Directorio de scripts/resources relativo al directorio de trabajo del proceso
+    private static final String PY_SCRIPT_DIR = Paths.get(System.getProperty("user.dir"), "resources_local").toString();
     private static final String PYTHON_EXE = System.getenv().getOrDefault("GESTURE_PYTHON_EXE", "python");
     // Script local para inferencia clásica (dentro del proyecto)
     private static final String LOCAL_INFER_SCRIPT = new java.io.File("resources_local/infer_local_svm.py").getAbsolutePath();
