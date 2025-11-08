@@ -1,0 +1,7 @@
+*.h5 filter=lfs diff=lfs merge=lfs -text
+* text=auto
+*.java text eol=lf
+*.json text eol=lf
+*.txt  text eol=lf
+*.form text eol=lf
+*.bat  text eol=crlf

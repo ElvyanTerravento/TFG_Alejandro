@@ -1,0 +1,31 @@
+{
+  "descriptor": "lbp",
+  "dataset": "asl",
+  "params_origin": "mnist",
+  "params_pid": "P13_R2p8_g8x8",
+  "svm_C": 0.1,
+  "cv_fold_accs": [
+    0.7818023562431335,
+    0.7762001156806946,
+    0.7776489853858948,
+    0.7905920743942261,
+    0.7878670692443848
+  ],
+  "cv_mean_acc": 0.7828221321105957,
+  "cv_std_acc": 0.005612056236714125,
+  "acc_val": 0.7955016677183809,
+  "acc_test": 0.7934865900383141,
+  "n_train": 51764,
+  "n_val": 22186,
+  "n_test": 13050,
+  "feat_dim": 960,
+  "train_seconds": 8.783312559127808,
+  "saved_clf_serialized": true,
+  "saved_clf_filename": "LBP_MNIST_ASL_SVM_C0p1.joblib",
+  "use_float16": true,
+  "plot_paths": {
+    "confusion_test": "entrenamientos_hog_or_lbp_cv5/LBP_MNIST_ASL_SVM_C0p1/plots/confusion_matrix_test.png",
+    "roc_test": "entrenamientos_hog_or_lbp_cv5/LBP_MNIST_ASL_SVM_C0p1/plots/roc_multiclass_test.png",
+    "learning_curve": "entrenamientos_hog_or_lbp_cv5/LBP_MNIST_ASL_SVM_C0p1/plots/learning_curve.png"
+  }
+}
