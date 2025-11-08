@@ -18,9 +18,12 @@ public class PanelImagen extends javax.swing.JPanel {
     }
 
     @Override
-    public void paint(Graphics g){
+    protected void paintComponent(Graphics g){
+        super.paintComponent(g); // Limpia el contenido anterior para evitar "doble imagen"
         Graphics2D g2d = (Graphics2D)g;
-        if(imagen!=null) g2d.drawImage(imagen,0,0,this);
+        if (imagen != null) {
+            g2d.drawImage(imagen, 0, 0, this); // Dibuja la imagen actual
+        }
     }
 
     public BufferedImage getImagen() {
@@ -29,6 +32,7 @@ public class PanelImagen extends javax.swing.JPanel {
 
     public void setImagen(BufferedImage imagen) {
         this.imagen = imagen;
+        repaint(); // Redibuja para reemplazar el último frame por la nueva imagen (p. ej., con landmarks)
     }
     
     
