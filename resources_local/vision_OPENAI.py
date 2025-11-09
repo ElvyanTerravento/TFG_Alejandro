@@ -1,20 +1,3 @@
-"""Script de clasificación de letras ASL en imágenes (visión OpenAI) - Versión ruta explícita.
-
-Cambios pedidos: la ruta de la(s) imagen(es) está hardcodeada en el código (sin argumentos CLI).
-
-Modos:
- 1. Modo single: procesa la imagen definida en SINGLE_IMAGE_PATH.
- 2. Modo batch: si BATCH_DIR no es None y existe, recorre recursivamente y procesa todas las imágenes .jpg/.jpeg/.png.
-
-Salida en batch: imprime una línea CSV por imagen: "ruta_relativa,resultado" y al final un resumen.
-
-API Key: se lee de la variable de entorno OPENAI_API_KEY (recomendado). Si quieres hardcodear (NO recomendado), asigna directamente la cadena a HARDCODED_API_KEY.
-
-PowerShell (sesión actual):
-    $env:OPENAI_API_KEY = "sk-..."
-
-"""
-
 from __future__ import annotations
 
 import base64

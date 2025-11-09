@@ -1,17 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Inferencia local para modelos clásicos (HOG / LBP / HOG+LBP con SVM).
-
-Uso:
-    python infer_local_svm.py --image <ruta_png> --model-dir <carpeta_con_modelo>
-
-Requisitos Python (instalar si faltan):
-    pip install numpy scikit-image scikit-learn joblib imageio
-
-Salida:
-    Imprime una línea clave: "Resultado: <LABEL>"
-"""
 from __future__ import annotations
 import argparse
 import json

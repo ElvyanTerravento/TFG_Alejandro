@@ -1,19 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Inferencia local para modelos DL (Keras/TensorFlow): CNN / ResNet.
-
-Uso:
-    python infer_dl.py --image <ruta_png> --model-file <ruta_modelo_h5_o_keras>
-
-Salida:
-    Imprime una línea clave: "Resultado: <LABEL>"
-
-Notas:
-- Si hay ficheros de etiquetas junto al modelo (labels.txt / classes.txt / classes.npy), se usarán.
-- Si no, se deduce por el nombre del modelo: MNIST -> 24 letras (sin J ni Z);
-  ASL -> A..Z (26). En ausencia de etiquetas especiales, no se emiten DEL/NOTHING/SPACE.
-"""
 from __future__ import annotations
 import argparse
 import os
