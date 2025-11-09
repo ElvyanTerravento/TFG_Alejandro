@@ -11,23 +11,17 @@ from pathlib import Path
 from typing import Iterable, Optional
 
 # ================= CONFIGURACIÓN =================
-# Ruta a UNA sola imagen para modo single
-SINGLE_IMAGE_PATH = r"C:\\Users\\alex1\\Desktop\\entrenamientos_extra\\datasets\\asl_alphabet_train\\S\\S21.jpg"
-
-# Directorio para modo batch (ponlo a None para desactivar)
-# BATCH_DIR: Optional[str] = r"C:\\Users\\alex1\\Desktop\\entrenamientos_extra\\ChallengeSet\\S\\"  # None para desactivar
-BATCH_DIR: Optional[str] = r"C:\\Users\\alex1\\Desktop\\entrenamientos_extra\\datasets\\sign_mnist_train\\S\\"  # None para desactivar
+SINGLE_IMAGE_PATH = None
+BATCH_DIR: Optional[str] = None
 
 # Nombre del modelo
 MODEL_NAME = "gemini-2.5-flash"
 
 # Archivo de salida JSON para resultados batch
-OUTPUT_JSON_PATH = r"C:\\Users\\alex1\\Desktop\\entrenamientos_extra\\resultados_batch_GEMINI.json"
+OUTPUT_JSON_PATH = None
 
-# Hardcodear la API key (NO recomendado). Deja en None para usar variable de entorno GEMINI_API_KEY
 HARDCODED_API_KEY: Optional[str] = None
 
-# Límite opcional de imágenes en batch (None = sin límite)
 BATCH_LIMIT: Optional[int] = 10
 
 # Extensiones soportadas
@@ -38,10 +32,10 @@ STRIP_IMAGE_METADATA = True
 TARGET_SIZE = (224, 224)
 FORCE_EXACT_RESIZE = True
 
-# Modo Vertex AI (False = usar google.generativeai simple API key)
-USE_VERTEX = True  # Pon True si deseas usar servicio gestionado Vertex + service account
+# Usar Vertex AI (True) o API pública (False)
+USE_VERTEX = True
 PROJECT_ID = "gestureid"
-LOCATION = "europe-west4"  # Debe coincidir con donde está disponible el modelo
+LOCATION = "europe-west4"
 
 try:
 	from PIL import Image  

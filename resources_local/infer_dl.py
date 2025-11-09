@@ -192,7 +192,6 @@ def extract_landmarks(image_path: str):
         img = img.astype('uint8')
         if img.max() <= 1:
             img = (img * 255).astype('uint8')
-        # imageio es RGB; MP acepta RGB, pero para dibujar con OpenCV si se usa, mejor BGR
         img_rgb = img
         img_bgr = img_rgb[:, :, ::-1].copy()
     except Exception as e:

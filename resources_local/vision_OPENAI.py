@@ -31,39 +31,30 @@ from openai import OpenAI
 
 
 # ============ CONFIGURACIÓN EXPLÍCITA ============
-# Ruta a UNA sola imagen para modo single (cámbiala a lo que necesites)
-SINGLE_IMAGE_PATH = r"C:\\Users\\alex1\\Desktop\\entrenamientos_extra\\datasets\\ChallengeSet\\Y\\IMG_20250905_172345.jpg"
-
-# Directorio para modo batch (ponlo a None si no quieres batch)
-BATCH_DIR: Optional[str] = r"C:\\Users\\alex1\\Desktop\\entrenamientos_extra\\ChallengeSet\\S"  # None para desactivar
+SINGLE_IMAGE_PATH = None
+BATCH_DIR: Optional[str] = None
 
 # Modelo a usar
 MODEL_NAME = "gpt-4o"
 
-# Archivo de salida para modo batch (JSON)
-OUTPUT_JSON_PATH = r"C:\\Users\\alex1\\Desktop\\entrenamientos_extra\\resultados_batch_OPENAI.json"
+OUTPUT_JSON_PATH = None
 
-# Hardcodear clave (NO recomendado). Déjalo en None para usar la variable de entorno OPENAI_API_KEY
 HARDCODED_API_KEY: Optional[str] = "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"
 
-# Límite opcional de imágenes en batch (None = sin límite)
 BATCH_LIMIT: Optional[int] = 10
 
 # Extensiones soportadas
 IMAGE_EXTS = {".jpg", ".jpeg", ".png"}
 
-# El modelo NO recibirá nunca el nombre ni la ruta del archivo; adicionalmente podemos eliminar metadatos EXIF.
-STRIP_IMAGE_METADATA = True  # Si no tienes pillow instalado, el código hará fallback silencioso.
+STRIP_IMAGE_METADATA = True
 
-# Redimensionado: imágenes mayores que este tamaño se reducen a 224x224
 TARGET_SIZE = (224, 224)
-# Si True fuerza exactamente 224x224 (puede distorsionar). Si False mantiene aspecto y rellena con bordes negros.
 FORCE_EXACT_RESIZE = True
 
 try:  # Import opcional
-    from PIL import Image  # type: ignore
-except Exception:  # noqa: BLE001
-    Image = None  # fallback
+    from PIL import Image 
+except Exception: 
+    Image = None 
 
 
 def load_api_key(env_var: str = "OPENAI_API_KEY") -> str:
@@ -100,7 +91,7 @@ def encode_image_b64(path: Path) -> tuple[str, str]:
     raw_bytes: bytes
     if STRIP_IMAGE_METADATA and Image is not None:
         try:
-            with Image.open(path) as im:  # type: ignore[attr-defined]
+            with Image.open(path) as im:
                 # Convertir a RGB para eliminar perfiles/alpha si no es necesario
                 mode = "RGB" if im.mode not in {"RGB", "L"} else im.mode
                 im_converted = im.convert(mode)
@@ -190,7 +181,7 @@ def extract_text(resp) -> str:
     if hasattr(resp, "output_text") and resp.output_text:
         return resp.output_text.strip()
     parts: list[str] = []
-    for item in getattr(resp, "output", []):  # type: ignore[attr-defined]
+    for item in getattr(resp, "output", []):
         for c in item.get("content", []):
             if c.get("type") in {"output_text", "text"}:
                 txt = c.get("text")
