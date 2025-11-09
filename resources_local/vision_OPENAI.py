@@ -22,7 +22,7 @@ MODEL_NAME = "gpt-4o"
 
 OUTPUT_JSON_PATH = None
 
-HARDCODED_API_KEY: Optional[str] = "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"
+HARDCODED_API_KEY: Optional[str] = "Solicitar al creador original"
 
 BATCH_LIMIT: Optional[int] = 10
 
