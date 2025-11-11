@@ -16,7 +16,7 @@ except Exception as e:
     raise
 
 # ---- Custom layers (for loading GCN models) ----
-import numpy as np  # ensure np available for layer config
+import numpy as np
 from tensorflow.keras import layers, models
 
 

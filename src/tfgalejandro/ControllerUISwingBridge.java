@@ -12,8 +12,7 @@ import java.util.Locale;
 
 /**
  * Puente sencillo para exponer métodos compatibles con Swing que PanelTraduccion
- * invoca por reflexión si están disponibles. Puede envolver un ControllerUI real
- * o funcionar de manera autónoma para las operaciones básicas.
+ * invoca por reflexión si están disponibles.
  */
 public class ControllerUISwingBridge {
 
