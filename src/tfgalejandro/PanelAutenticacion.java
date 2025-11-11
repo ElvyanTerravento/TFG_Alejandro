@@ -21,7 +21,7 @@ import javax.swing.Timer;
 import javax.swing.SwingUtilities;
 /**
  *
- * @author jesus
+ * @author alejandro
  */
 public class PanelAutenticacion extends javax.swing.JPanel {
 

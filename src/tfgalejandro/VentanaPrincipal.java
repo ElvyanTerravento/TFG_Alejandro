@@ -25,7 +25,7 @@ import java.nio.file.Paths;
 
 /**
  *
- * @author jesus
+ * @author alejandro
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 

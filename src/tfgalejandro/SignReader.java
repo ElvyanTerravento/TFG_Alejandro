@@ -6,7 +6,7 @@ package tfgalejandro;
 
 /**
  *
- * @author jesus
+ * @author alejandro
  */
 public class SignReader {
 

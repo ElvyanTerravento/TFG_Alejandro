@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 
 /**
  *
- * @author jesus
+ * @author alejandro
  */
 public class PanelImagen extends javax.swing.JPanel {
     BufferedImage imagen;

@@ -7,7 +7,7 @@ import java.awt.Dimension;
 
 /**
  *
- * @author jesus
+ * @author alejandro
  */
 public class PanelCamara extends javax.swing.JPanel {
     private Webcam myCamera;

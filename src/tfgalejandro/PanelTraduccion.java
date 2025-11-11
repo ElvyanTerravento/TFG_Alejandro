@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 
 /**
  *
- * @author jesus
+ * @author alejandro
  */
 public class PanelTraduccion extends javax.swing.JPanel {
 

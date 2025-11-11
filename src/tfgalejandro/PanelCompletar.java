@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 
 /**
  *
- * @author jesus
+ * @author alejandro
  */
 public class PanelCompletar extends javax.swing.JPanel {
 
