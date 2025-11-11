@@ -10,7 +10,10 @@ import time
 from pathlib import Path
 from typing import Iterable, Optional
 
+# =================================================
 # ================= CONFIGURACIÓN =================
+# =================================================
+
 SINGLE_IMAGE_PATH = None
 BATCH_DIR: Optional[str] = None
 
